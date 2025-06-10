@@ -237,19 +237,81 @@
 
   <nav>
     <a href="cursos.html">Vídeo Aulas</a>
-    <a href="#dicas">Dicas Digitais</a>
+    <a href="#blog">Blog e Notícias</a>
     <a href="#empregos">Oportunidades</a>
     <a href="#historias">Histórias Inspiradoras</a>
-    <a href="#quiz">Quiz</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="faq.html">Perguntas Frequentes</a>
+    <a href="dowload.html">Dowloads</a>
     <a href="#voluntario">Voluntariado</a>
     <a href="#ajuda">Ajuda</a>
     <a href="#contato">Contato</a>
   </nav>
 
-  <section id="dicas">
-    <h2>Dicas Digitais</h2>
-    <p>Veja como usar o WhatsApp, tirar fotos, fazer chamadas de vídeo e evitar golpes virtuais.</p>
-  </section>
+<section id="video-aulas">
+  <h2>Vídeo Aulas</h2>
+  <p>
+    Aprenda no seu ritmo com nossas vídeo aulas especialmente selecionadas para você! 
+    Clique no botão abaixo para acessar conteúdos práticos e didáticos que vão facilitar seu aprendizado digital.
+  </p>
+  <a href="cursos.html" class="btn-youtube" aria-label="Acessar vídeo aulas no YouTube">
+    Acesse as vídeo aulas
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="Ícone do YouTube" />
+  </a>
+</section>
+
+<style>
+  .btn-youtube {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FF0000;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1em;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-youtube img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+
+  .btn-youtube:hover {
+    background-color: #cc0000;
+    box-shadow: 0 6px 12px rgba(204, 0, 0, 0.6);
+  }
+</style>
+
+  <section id="blog">
+  <h2>Blog e Notícias</h2>
+  <p>Atualizações sobre tecnologia acessível, dicas semanais e tendências digitais.</p>
+  <div class="cards-container">
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png" alt="Idosa usando celular">
+      <h3><a href="noticia1.html">Tecnologia na terceira idade</a></h3>
+      <p>Dicas práticas para usar o celular com mais segurança e aproveitar apps úteis no dia a dia.</p>
+      <p style="font-size: 0.75em; color: #888;">Publicado em 10/06/2025</p>
+    </div>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4221/4221419.png" alt="Apps úteis">
+      <h3><a href="noticia2.html">5 apps que facilitam sua vida</a></h3>
+      <p>Conheça aplicativos gratuitos para lembrar remédios, organizar tarefas e aprender online.</p>
+      <p style="font-size: 0.75em; color: #888;">Publicado em 03/06/2025</p>
+    </div>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Tendências">
+      <h3><a href="noticia3.html">Tendências digitais 2025</a></h3>
+      <p>Entenda como a inteligência artificial e o acesso à internet estão mudando o cotidiano.</p>
+      <p style="font-size: 0.75em; color: #888;">Publicado em 27/05/2025</p>
+    </div>
+  </div>
+</section>
 
   <section id="empregos">
     <h2>Oportunidades</h2>
