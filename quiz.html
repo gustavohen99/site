@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz de Inclusão Digital</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    main {
+      max-width: 600px;
+      background: white;
+      margin: 30px auto;
+      border-radius: 10px;
+      padding: 30px 25px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #004080;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 25px;
+    }
+    .question p {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      background-color: #e6f0ff;
+      margin-bottom: 8px;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: background-color 0.3s, border-color 0.3s;
+      user-select: none;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+    label:hover {
+      background-color: #cde0ff;
+      border-color: #007acc;
+    }
+    button {
+      display: block;
+      margin: 0 auto;
+      background-color: #007acc;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,122,204,0.7);
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    #resultado {
+      margin-top: 25px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #004080;
+      text-align: center;
+    }
+    .voltar-btn {
+      margin-top: 30px;
+      display: block;
+      background-color: #555;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 7px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      max-width: 120px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .voltar-btn:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Quiz de Inclusão Digital</h1>
+  </header>
+
+  <main>
+    <h2>Teste seus conhecimentos básicos</h2>
+
+    <form id="quizForm">
+      <div class="question">
+        <p>1. O que é um smartphone?</p>
+        <label><input type="radio" name="q1" value="correta" /> Um telefone inteligente com acesso à internet</label>
+        <label><input type="radio" name="q1" value="errada" /> Uma televisão pequena</label>
+        <label><input type="radio" name="q1" value="errada" /> Um tipo de relógio</label>
+      </div>
+
+      <div class="question">
+        <p>2. Para que serve o WhatsApp?</p>
+        <label><input type="radio" name="q2" value="correta" /> Para enviar mensagens e fazer chamadas</label>
+        <label><input type="radio" name="q2" value="errada" /> Para jogar</label>
+        <label><input type="radio" name="q2" value="errada" /> Para assistir filmes</label>
+      </div>
+
+      <div class="question">
+        <p>3. Como você pode proteger sua conta online?</p>
+        <label><input type="radio" name="q3" value="correta" /> Usando senhas fortes e diferentes para cada conta</label>
+        <label><input type="radio" name="q3" value="errada" /> Compartilhando sua senha com amigos</label>
+        <label><input type="radio" name="q3" value="errada" /> Usando a mesma senha em todos os lugares</label>
+      </div>
+
+      <button type="submit">Enviar Respostas</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <a href="index.html" class="voltar-btn">Voltar</a>
+  </main>
+
+  <script>
+    const form = document.getElementById('quizForm');
+    const resultado = document.getElementById('resultado');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let pontos = 0;
+
+      const respostas = {
+        q1: 'correta',
+        q2: 'correta',
+        q3: 'correta'
+      };
+
+      for (let key in respostas) {
+        const selected = form.elements[key].value;
+        if (selected === respostas[key]) {
+          pontos++;
+        }
+      }
+
+      resultado.textContent = `Você acertou ${pontos} de 3 perguntas.`;
+
+      if(pontos === 3){
+        resultado.textContent += ' Parabéns! Você tem um ótimo conhecimento digital.';
+      } else if(pontos === 2){
+        resultado.textContent += ' Muito bom! Continue aprendendo.';
+      } else {
+        resultado.textContent += ' Continue praticando para melhorar.';
+      }
+    });
+  </script>
+
+</body>
+</html>
